@@ -9,9 +9,7 @@ Font used in screenshot: [Hack](https://github.com/chrissimpkins/Hack) at 12px
 
 #### Please note
 
-I developed this theme out of frustration in the lack of an accurate github theme
-for vim. This is my first time creating a syntax theme and I only test it in neovim
-for the following languages/packages only:
+I only tested the theme in a limited set of languages/packages:
 
 - [vim-javascript](https://github.com/pangloss/vim-javascript)
 - [vim-jsx](https://github.com/mxw/vim-jsx)
