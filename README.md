@@ -5,7 +5,9 @@ theme used on GitHub as much as possible.
 
 ![Preview](https://i.imgur.com/cdxSVlZ.png)
 
-##### Please note
+Font used in screenshot: [Hack](https://github.com/chrissimpkins/Hack) at 12px
+
+#### Please note
 
 I developed this theme out of frustration in the lack of an accurate github theme
 for vim. This is my first time creating a syntax theme and I only test it in neovim
@@ -101,8 +103,4 @@ There's a theme for `vim-airline`, enable it with:
 ```vim
 let g:airline_theme='github'
 ```
-
-= = = = = 
-
-Font used in screenshot: [Hack](https://github.com/chrissimpkins/Hack) at 12px
 
