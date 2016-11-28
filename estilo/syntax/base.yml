@@ -1,0 +1,86 @@
+# BASE UI
+Bold: '. . b'
+ColorColumn: '. gray1'
+Conceal: ''
+Cursor: '. black'
+CursorIM: '. black'
+CursorColumn: ''
+CursorLine: '. gray1'
+CursorLineNumber: 'scarlet'
+Directory: 'violet'
+DiffAdd: '. lightGreen'
+DiffChange: '. lightGreen'
+DiffDelete: '. lightRed'
+DiffText: '. solidGreen'
+ErrorMsg: 'red'
+EndOfBuffer: 'gray3'
+VertSplit: 'gray3 gray1'
+Folded: ''
+FoldColumn: ''
+SignColumn: ''
+IncSearch: '. yellowSoft'
+Italic: '. . i'
+LineNr: 'gray0'
+MatchParen: '. yellowSoft'
+ModeMsg: ''
+MoreMsg: ''
+NonText: 'gray3'
+Normal: 'black white'
+PMenu: 'black gray4'
+PMenuSel: 'white gray5'
+PmenuSbar: '. gray5'
+PmenuThumb: '. gray0'
+Question: 'blue'
+Search: '. yellowSoft'
+SpecialKey: ''
+SpellBad: '. red'
+SpellLocal: '. red'
+SpellCap: '. red'
+SpellRare: '. red'
+StatusLine: 'white gray5'
+StatusLineNC: 'gray5 gray4'
+TabLine: 'gray5 gray4'
+TabLineFill: '. gray5'
+TabLineSel: 'black white'
+Title: 'black'
+Visual: '. violetLight'
+VisualNOS: ''
+WarningMsg: 'orange'
+WildMenu: ''
+
+# BASE SYNTAX
+Comment: 'gray0'
+Constant: 'blue'
+String: 'blueDeep' # Constant
+Character: 'blue' # Constant
+Boolean: 'blue' # Constant
+Number: 'blue' # Constant
+Float: 'blue' # Constant
+Identifier: 'violet'
+Function: 'violet' # Identifier
+Statement: 'scarlet'
+Conditional: 'scarlet' # Statement
+Repeat: '' # Statement
+Label: 'greenText' # Statement
+Operator: 'scarlet' # Statement
+Keyword: 'scarlet' # Statement
+Exception: '' # Statement
+PreProc: ''
+Include: '' # PreProc
+Define: '' # PreProc
+Macro: '' # PreProc
+PreCondit: '' # PreProc
+Type: 'blue'
+StorageClass: '' # Type
+Structure: '' # Type
+Typedef: '' # Type
+Special: 'scarlet'
+SpecialChar: '' # Special
+Tag: '' # Special
+Delimiter: 'black' # Special
+SpecialComment: '' # Special
+Debug: '' # Special
+Underlined: '. . u'
+Ignore: ''
+Error: 'scarlet'
+Todo: 'scarlet'

@@ -1,0 +1,14 @@
+name: 'github'
+version: '0.0.1'
+license: 'MIT'
+author: 'Alberto Restifo <alberto@hike.ninja>'
+url: 'https://github.com/albertorestifo/github.vim'
+description: 'The GitHub colorscheme for vim/nvim'
+colorschemes:
+  - name: github
+    background: 'light'
+    palette: github
+airline:
+  - name: github
+    palette: github
+    style: github

@@ -1,0 +1,26 @@
+black: '#333333'
+gray0: '#969896'
+gray1: '#f8f8f8'
+gray3: '#d8d8d8'
+gray4: '#e0e0e0'
+gray5: '#464a4d'
+white: '#ffffff'
+
+lightGreen: '#eaffea'
+brightGreen: '#a6f3a6'
+solidGreen: '#55a532'
+greenText: '#63a35c'
+
+red: '#bd2c00'
+lightRed: '#ffecec'
+
+blue: '#0086b3'
+blueDeep: '#183691'
+
+scarlet: '#a71d5d'
+violet: '#795da3'
+violetLight: '#c8c8fa'
+
+yellowSoft: '#ffe3b4'
+orange: '#ed6a43'
+orangeBackground: '#ef9700'

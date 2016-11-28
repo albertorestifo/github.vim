@@ -1,0 +1,6 @@
+vimVar: 'black'
+vimCommand: 'blue'
+vimEnvvar: 'blue'
+vimIscommand: 'blue'
+vimLet: 'scarlet'
+vimOption: 'blue'

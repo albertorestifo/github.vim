@@ -1,0 +1,23 @@
+normal1: 'gray1 gray5'
+normal2: 'gray1 gray0'
+normal3: 'black gray3'
+
+inactive1: 'gray0 gray3'
+inactive2: 'gray0 gray3'
+inactive3: 'black gray1'
+
+insert1: 'gray1 blue'
+insert2: 'gray1 gray0'
+insert3: 'black gray3'
+
+replace1: 'gray1 orange'
+replace2: 'gray1 gray0'
+replace3: 'black gray3'
+
+visual1: 'gray1 scarlet'
+visual2: 'gray1 gray0'
+visual3: 'black gray3'
+
+ctrlp1: 'gray1 violet'
+ctrlp2: 'gray1 gray0'
+ctrlp3: 'black gray3'
