@@ -3,6 +3,8 @@
 GitHub.vim is a theme optimised for neovim. It tryies to be the most accurate
 copy of the GitHub syntax theme possible.
 
+![Preview](https://i.imgur.com/cdxSVlZ.png)
+
 
 ## Installation
 
