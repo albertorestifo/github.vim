@@ -1,10 +1,31 @@
-# GitHub.vim
+# github.vim
 
-GitHub.vim is a theme optimised for neovim. It tryies to be the most accurate
-copy of the GitHub syntax theme possible.
+github.vim is a vim theme, optimized to neovim. It tries to reproduce the
+theme used on GitHub as much as possible.
 
 ![Preview](https://i.imgur.com/cdxSVlZ.png)
 
+##### Please note
+
+I developed this theme out of frustration in the lack of an accurate github theme
+for vim. This is my first time creating a syntax theme and I only test it in neovim
+for the following languages/packages only:
+
+- [vim-javascript](https://github.com/pangloss/vim-javascript)
+- [vim-jsx](https://github.com/mxw/vim-jsx)
+- [vim-go](https://github.com/fatih/vim-go)
+- json
+- yaml
+- html
+- css
+- vimscript
+- [vim-airline](https://github.com/vim-airline/vim-airline)
+
+If a language you use does not render correctly or is not accurate please open
+an issue, providing a Gist or file in a repo I can use as reference for
+adjusting the colors.
+
+Contributions are welcome!
 
 ## Installation
 
@@ -37,3 +58,51 @@ Plug 'albertorestifo/github.vim'
 #### Manual
 
 Copy all the filed in your `~/.vim` or `~/.config/nvim` directory
+
+
+## Configuration
+
+For neovim:
+
+```
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
+
+set background=light
+colorscheme github
+```
+
+For vim:
+
+```vim
+" for vim 7
+set t_Co=256
+
+" for vim 8
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
+
+set background=light
+colorscheme github
+```
+
+There's a theme for `vim-airline`, enable it with:
+
+```vim
+let g:airline_theme='github'
+```
+
+= = = = = 
+
+Font used in screenshot: [Hack](https://github.com/chrissimpkins/Hack) at 12px
+
