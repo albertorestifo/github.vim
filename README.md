@@ -75,7 +75,6 @@ endif
 
 syntax enable
 
-set background=light
 colorscheme github
 ```
 
@@ -92,7 +91,6 @@ endif
 
 syntax enable
 
-set background=light
 colorscheme github
 ```
 
