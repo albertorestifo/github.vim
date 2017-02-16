@@ -4,7 +4,7 @@
 " URL: https://github.com/albertorestifo/github.vim
 " Author: Alberto Restifo &lt;alberto@hike.ninja&gt;
 " License: MIT
-" Last Change: 2016/11/28 06:42
+" Last Change: 2017/02/16 12:06
 " ===============================================================
 
 let g:colors_name="github"
@@ -52,6 +52,7 @@ hi TabLineSel guifg=#333333 ctermfg=236 guibg=#ffffff ctermbg=15 gui=NONE cterm=
 hi Title guifg=#333333 ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Visual guibg=#c8c8fa ctermbg=189 gui=NONE cterm=NONE
 hi WarningMsg guifg=#ed6a43 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi WildMenu guifg=#464a4d ctermfg=239 guibg=#e0e0e0 ctermbg=254 gui=NONE cterm=NONE
 hi Comment guifg=#969896 ctermfg=246 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Constant guifg=#0086b3 ctermfg=31 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi String guifg=#183691 ctermfg=24 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
