@@ -33,6 +33,7 @@ let s:ghc.white = ['ffffff', 15]
 let s:ghc.sky     = ['005cc5', 26]
 let s:ghc.plum    = ['6F42C1', 98]
 let s:ghc.fire    = ['D73A49', 160]
+let s:ghc.grass   = ['22863a', 34]
 let s:ghc.strings = ['032f62', 16]
 
 " This gray is used for the comments only
@@ -309,6 +310,27 @@ call s:HL('goBlock'    , 'orange')
 call s:HL('goOperator' , 'black')
 call s:HL('goField'    , 'black')
 call s:HL('goTypeName' , 'black')
+
+" }}}
+" JSON {{{
+
+call s:HL('jsonBraces', 'black')
+
+call s:HL('jsonKeyword', 'strings')
+
+" }}}
+" CSS {{{
+
+call s:HL('cssTagName', 'grass')
+
+call s:HL('cssPseudoClassId', 'plum')
+
+call s:HL('cssUnitDecorators', 'fire')
+
+" }}}
+" YAML {{{
+
+call s:HL('yamlKey', 'grass')
 
 " }}}
 " }}}
