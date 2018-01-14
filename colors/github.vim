@@ -17,7 +17,7 @@ if exists("syntax_on")
     syntax reset
 endif
 
-let g:colors_name = "github-2017"
+let g:colors_name = "github"
 
 " }}}
 " Palette {{{
@@ -26,11 +26,11 @@ let s:ghc = {}
 
 " GitHub carefully selects a magnificent pure-black for the text and pure
 " white for the background
-let s:ghc.black = ['000000', 16]
+let s:ghc.black = ['24292e', 16]
 let s:ghc.white = ['ffffff', 15]
 
 " Colors used in the actual syntax highlighthing
-let s:ghc.sky     = ['005CC5', 26]
+let s:ghc.sky     = ['005cc5', 26]
 let s:ghc.plum    = ['6F42C1', 98]
 let s:ghc.fire    = ['D73A49', 160]
 let s:ghc.strings = ['032f62', 16]
@@ -41,6 +41,9 @@ let s:ghc.gray = ['6A737D', 244]
 " This gray is used for the line numbers only
 let s:ghc.cloud = ['BABBBD', 250]
 
+" This is a even lighter gray for background
+let s:ghc.light_gray = ['F5F5F5', 250]
+
 " Colors used in the diff view
 let s:ghc.diff_add_light    = ['E7FFEE', 158]
 let s:ghc.diff_add_dark     = ['AEF1BF', 121]
@@ -49,6 +52,9 @@ let s:ghc.diff_remove_dark  = ['FCB9C1', 217]
 
 " Color used when selecting a line
 let s:ghc.sun = ['FFFBDF', 230]
+
+" When seraching using the GitHub search, the color is slightly darker
+let s:ghc.sun_search = ['FFFEC9', 230]
 
 " Colors used in different areas trought the UI. As such, those are also used
 " for vim UI elements only.
@@ -110,51 +116,47 @@ endfunction
 
 call s:HL('Normal', 'black', 'white')
 
-"call s:HL('Folded', 'mediumgravel', 'bg', 'none')
+call s:HL('Folded', 'gray', 'light_gray', 'none')
+call s:HL('VertSplit', 'cloud', 'bg', 'none')
 
-"call s:HL('VertSplit', 'lightgravel', 'bg', 'none')
+call s:HL('CursorLine',   '', 'sun', 'none')
+call s:HL('CursorColumn', '', 'light_gray')
+call s:HL('ColorColumn',  '', 'light_gray')
 
-"call s:HL('CursorLine',   '', 'darkgravel', 'none')
-"call s:HL('CursorColumn', '', 'darkgravel')
-"call s:HL('ColorColumn',  '', 'darkgravel')
+call s:HL('TabLine', 'gray', 'cloud', 'none')
+call s:HL('TabLineFill', 'gray', 'cloud', 'none')
+call s:HL('TabLineSel', 'black', 'white', 'none')
 
-"call s:HL('TabLine', 'plain', s:tabline, 'none')
-"call s:HL('TabLineFill', 'plain', s:tabline, 'none')
-"call s:HL('TabLineSel', 'coal', 'tardis', 'none')
+call s:HL('MatchParen', 'fire', '', 'none')
 
-"call s:HL('MatchParen', 'dalespale', 'darkgravel', 'bold')
+call s:HL('NonText',    'cloud', 'bg')
+call s:HL('SpecialKey', 'cloud', 'bg')
 
-"call s:HL('NonText',    'deepgravel', 'bg')
-"call s:HL('SpecialKey', 'deepgravel', 'bg')
+call s:HL('Visual',    '',  'sun')
+call s:HL('VisualNOS', '',  'sun')
 
-"call s:HL('Visual',    '',  'deepgravel')
-"call s:HL('VisualNOS', '',  'deepgravel')
+call s:HL('Search',    'black', 'sun_search', 'bold')
+call s:HL('IncSearch', 'black', 'sun_search',    'bold')
 
-"call s:HL('Search',    'coal', 'dalespale', 'bold')
-"call s:HL('IncSearch', 'coal', 'tardis',    'bold')
+call s:HL('Underlined', 'fg', '', 'underline')
 
-"call s:HL('Underlined', 'fg', '', 'underline')
+call s:HL('StatusLine',   'black', 'white')
+call s:HL('StatusLineNC', 'gray', 'white', 'none')
 
-"call s:HL('StatusLine',   'coal', 'tardis',     'bold')
-"call s:HL('StatusLineNC', 'snow', 'deepgravel', 'bold')
+call s:HL('Directory', 'plum', '')
 
-"call s:HL('Directory', 'dirtyblonde', '', 'bold')
+call s:HL('Title', 'sky')
 
-"call s:HL('Title', 'lime')
+call s:HL('ErrorMsg',   'fire',       'bg', 'bold')
+call s:HL('MoreMsg',    'fire',   '',   'bold')
+call s:HL('ModeMsg',    'fire', '',   'bold')
+call s:HL('Question',   'fire', '',   'bold')
+call s:HL('WarningMsg', 'fire',       '',   'bold')
 
-"call s:HL('ErrorMsg',   'taffy',       'bg', 'bold')
-"call s:HL('MoreMsg',    'dalespale',   '',   'bold')
-"call s:HL('ModeMsg',    'dirtyblonde', '',   'bold')
-"call s:HL('Question',   'dirtyblonde', '',   'bold')
-"call s:HL('WarningMsg', 'dress',       '',   'bold')
+" This is a ctags tag, not an HTML one.  'Something you can use c-] on'.
+call s:HL('Tag', '', '', 'bold')
 
-"" This is a ctags tag, not an HTML one.  'Something you can use c-] on'.
-"call s:HL('Tag', '', '', 'bold')
-
-"" hi IndentGuides                  guibg=#373737
-"" hi WildMenu        guifg=#66D9EF guibg=#000000
-
-"" }}}
+" }}}
 " Gutter {{{
 
 call s:HL('LineNr', 'cloud', 'white')
@@ -162,183 +164,94 @@ call s:HL('SignColumn', '', 'white')
 call s:HL('FoldColumn', 'cloud', 'white')
 
 " }}}
-"" Cursor {{{
+" Cursor {{{
 
-"call s:HL('Cursor',  'coal', 'tardis', 'bold')
-"call s:HL('vCursor', 'coal', 'tardis', 'bold')
-"call s:HL('iCursor', 'coal', 'tardis', 'none')
-
-"" }}}
-" Syntax highlighting {{{
-
-call s:HL('Special', 'fire')
-call s:HL('Comment',        'gray')
-call s:HL('Todo',           'sky', 'bg')
-call s:HL('SpecialComment', 'sky', 'bg')
-call s:HL('String', 'strings')
-call s:HL('Statement',   'fire')
-call s:HL('Keyword',     'fire')
-call s:HL('Conditional', 'fire')
-call s:HL('Operator',    'fire')
-call s:HL('Label',       'black')
-call s:HL('Repeat',      'fire')
-call s:HL('Identifier', 'fire', '', 'none')
-call s:HL('Function',   'plum', '', 'none')
-
-"" Preprocessor stuff is lime, to make it pop.
-""
-"" This includes imports in any given language, because they should usually be
-"" grouped together at the beginning of a file.  If they're in the middle of some
-"" other code they should stand out, because something tricky is
-"" probably going on.
-call s:HL('PreProc',   'plum', '', 'none')
-"call s:HL('Macro',     'lime', '', 'none')
-"call s:HL('Define',    'lime', '', 'none')
-"call s:HL('PreCondit', 'lime', '', 'bold')
-
-call s:HL('Constant',  'sky')
-call s:HL('Character', 'sky')
-call s:HL('Boolean',   'sky')
-call s:HL('Number', 'sky')
-call s:HL('Float',  'sky')
-call s:HL('SpecialChar', 'sky')
-call s:HL('Type', 'sky', '', 'none')
-call s:HL('StorageClass', 'sky')
-call s:HL('Structure', 'sky')
-call s:HL('Typedef', 'sky')
-call s:HL('Exception', 'fire')
-
-"" Misc
-"call s:HL('Error',  'snow',   'taffy', 'bold')
-"call s:HL('Debug',  'snow',   '',      'bold')
-"call s:HL('Ignore', 'gravel', '',      '')
+call s:HL('Cursor',  'white', 'black', 'bold')
+call s:HL('vCursor', 'white', 'black', 'bold')
+call s:HL('iCursor', 'white', 'black', 'none')
 
 " }}}
-"" Completion Menu {{{
+" Syntax highlighting {{{
 
-"call s:HL('Pmenu', 'plain', 'deepergravel')
-"call s:HL('PmenuSel', 'coal', 'tardis', 'bold')
-"call s:HL('PmenuSbar', '', 'deepergravel')
-"call s:HL('PmenuThumb', 'brightgravel')
+call s:HL('Special'        , 'fire')
+call s:HL('Comment'        , 'gray')
+call s:HL('String'         , 'strings')
+call s:HL('Statement'      , 'fire')
+call s:HL('Keyword'        , 'fire')
+call s:HL('Conditional'    , 'fire')
+call s:HL('Operator'       , 'fire')
+call s:HL('Label'          , 'fire')
+call s:HL('Repeat'         , 'fire')
+call s:HL('Todo'           , 'sky',  'bg')
+call s:HL('SpecialComment' , 'sky',  'bg')
+call s:HL('Identifier'     , 'fire', '', 'none')
+call s:HL('Function'       , 'plum', '', 'none')
 
-"" }}}
-"" Diffs {{{
+" Preprocessor stuff is lime, to make it pop.
+"
+" This includes imports in any given language, because they should usually be
+" grouped together at the beginning of a file.  If they're in the middle of some
+" other code they should stand out, because something tricky is
+" probably going on.
+call s:HL('PreProc'   , 'fire' , '' , 'none')
+call s:HL('Macro'     , 'fire' , '' , 'none')
+call s:HL('Define'    , 'fire' , '' , 'none')
+call s:HL('PreCondit' , 'fire' , '' , 'none')
+call s:HL('Type'      , 'fire' , '' , 'none')
+
+call s:HL('Constant'     , 'sky')
+call s:HL('Character'    , 'sky')
+call s:HL('Boolean'      , 'sky')
+call s:HL('Number'       , 'sky')
+call s:HL('Float'        , 'sky')
+call s:HL('SpecialChar'  , 'sky')
+call s:HL('StorageClass' , 'sky')
+call s:HL('Structure'    , 'sky')
+call s:HL('Typedef'      , 'sky')
+call s:HL('Exception'    , 'fire')
+
+" Misc
+call s:HL('Error',  'fire')
+call s:HL('Debug',  'fire')
+call s:HL('Ignore', 'gray')
+
+" }}}
+" Completion Menu {{{
+
+call s:HL('Pmenu'      , 'white' , 'black')
+call s:HL('PmenuSel'   , 'white' , 'sky')
+call s:HL('PmenuSbar'  , ''      , 'white')
+call s:HL('PmenuThumb' , 'white')
+
+" }}}
+" Diffs {{{
 
 call s:HL('DiffDelete', '', 'diff_remove_light')
 call s:HL('DiffAdd',    '',     'diff_add_light')
 call s:HL('DiffChange', '',     'diff_add_dark')
 " call s:HL('DiffText',   'snow', 'deepergravel', 'bold')
 
-"" }}}
-"" Spelling {{{
+" }}}
+" Spelling {{{
 
-"if has("spell")
-"    call s:HL('SpellCap', 'dalespale', 'bg', 'undercurl,bold', 'dalespale')
-"    call s:HL('SpellBad', '', 'bg', 'undercurl', 'dalespale')
-"    call s:HL('SpellLocal', '', '', 'undercurl', 'dalespale')
-"    call s:HL('SpellRare', '', '', 'undercurl', 'dalespale')
-"endif
+ if has("spell")
+     call s:HL('SpellCap'   , 'fire' , 'bg' , 'undercurl,bold' , 'fire')
+     call s:HL('SpellBad'   , ''     , 'bg' , 'undercurl'      , 'fire')
+     call s:HL('SpellLocal' , ''     , ''   , 'undercurl'      , 'fire')
+     call s:HL('SpellRare'  , ''     , ''   , 'undercurl'      , 'fire')
+ endif
 
-"" }}}
-
-"" }}}
-"" Plugins {{{
-
-"" CtrlP {{{
-
-"    " the message when no match is found
-"    call s:HL('CtrlPNoEntries', 'snow', 'taffy', 'bold')
-
-"    " the matched pattern
-"    call s:HL('CtrlPMatch', 'orange', 'bg', 'none')
-
-"    " the line prefix '>' in the match window
-"    call s:HL('CtrlPLinePre', 'deepgravel', 'bg', 'none')
-
-"    " the prompt’s base
-"    call s:HL('CtrlPPrtBase', 'deepgravel', 'bg', 'none')
-
-"    " the prompt’s text
-"    call s:HL('CtrlPPrtText', 'plain', 'bg', 'none')
-
-"    " the prompt’s cursor when moving over the text
-"    call s:HL('CtrlPPrtCursor', 'coal', 'tardis', 'bold')
-
-"    " 'prt' or 'win', also for 'regex'
-"    call s:HL('CtrlPMode1', 'coal', 'tardis', 'bold')
-
-"    " 'file' or 'path', also for the local working dir
-"    call s:HL('CtrlPMode2', 'coal', 'tardis', 'bold')
-
-"    " the scanning status
-"    call s:HL('CtrlPStats', 'coal', 'tardis', 'bold')
-
-"    " TODO: CtrlP extensions.
-"    " CtrlPTabExtra  : the part of each line that’s not matched against (Comment)
-"    " CtrlPqfLineCol : the line and column numbers in quickfix mode (|s:HL-Search|)
-"    " CtrlPUndoT     : the elapsed time in undo mode (|s:HL-Directory|)
-"    " CtrlPUndoBr    : the square brackets [] in undo mode (Comment)
-"    " CtrlPUndoNr    : the undo number inside [] in undo mode (String)
+" }}}
 
 "" }}}
-"" EasyMotion {{{
+" Plugins {{{
 
-"call s:HL('EasyMotionTarget', 'tardis',     'bg', 'bold')
-"call s:HL('EasyMotionShade',  'deepgravel', 'bg')
+" No plugin-specific configuration yet. PR welcome! :)
 
-"" }}}
-"" Interesting Words {{{
+" }}}
+" Filetype-specific {{{
 
-"" These are only used if you're me or have copied the <leader>hNUM mappings
-"" from my Vimrc.
-"call s:HL('InterestingWord1', 'coal', 'orange')
-"call s:HL('InterestingWord2', 'coal', 'lime')
-"call s:HL('InterestingWord3', 'coal', 'saltwatertaffy')
-"call s:HL('InterestingWord4', 'coal', 'toffee')
-"call s:HL('InterestingWord5', 'coal', 'dress')
-"call s:HL('InterestingWord6', 'coal', 'taffy')
-
-
-"" }}}
-"" Makegreen {{{
-
-"" hi GreenBar term=reverse ctermfg=white ctermbg=green guifg=coal guibg=#9edf1c
-"" hi RedBar   term=reverse ctermfg=white ctermbg=red guifg=white guibg=#C50048
-
-"" }}}
-"" Rainbow Parentheses {{{
-
-"call s:HL('level16c', 'mediumgravel',   '', 'bold')
-"call s:HL('level15c', 'dalespale',      '', '')
-"call s:HL('level14c', 'dress',          '', '')
-"call s:HL('level13c', 'orange',         '', '')
-"call s:HL('level12c', 'tardis',         '', '')
-"call s:HL('level11c', 'lime',           '', '')
-"call s:HL('level10c', 'toffee',         '', '')
-"call s:HL('level9c',  'saltwatertaffy', '', '')
-"call s:HL('level8c',  'coffee',         '', '')
-"call s:HL('level7c',  'dalespale',      '', '')
-"call s:HL('level6c',  'dress',          '', '')
-"call s:HL('level5c',  'orange',         '', '')
-"call s:HL('level4c',  'tardis',         '', '')
-"call s:HL('level3c',  'lime',           '', '')
-"call s:HL('level2c',  'toffee',         '', '')
-"call s:HL('level1c',  'saltwatertaffy', '', '')
-
-"" }}}
-"" ShowMarks {{{
-
-"call s:HL('ShowMarksHLl', 'tardis', 'blackgravel')
-"call s:HL('ShowMarksHLu', 'tardis', 'blackgravel')
-"call s:HL('ShowMarksHLo', 'tardis', 'blackgravel')
-"call s:HL('ShowMarksHLm', 'tardis', 'blackgravel')
-
-"" }}}
-
-"" }}}
-"" Filetype-specific {{{
-
-"" Vim {{{
+" Vim {{{
 
 call s:HL('vimCommand', 'fire')
 call s:HL('vimIsCommand', 'sky')
@@ -349,26 +262,53 @@ call s:HL('vimParenSep', 'black')
 call s:HL('vimOption', 'sky')
 call s:HL('vimSet', 'sky')
 
-"" }}}
+" }}}
 " JavaScript {{{
 
-call s:HL('jsGlobalNodeObjects', 'sky')
-call s:HL('jsVariableDef', 'sky')
-call s:HL('jsThis', 'sky')
-call s:HL('jsThis', 'sky')
+call s:HL('jsVariableDef', 'black')
 
-call s:HL('jsStorageClass', 'fire')
-call s:HL('jsImport', 'fire')
-call s:HL('jsFrom', 'fire')
-call s:HL('jsModuleAs', 'fire')
+call s:HL('jsGlobalNodeObjects' , 'sky')
+call s:HL('jsThis'              , 'sky')
+call s:HL('jsThis'              , 'sky')
 
-call s:HL('jsClassDefinition', 'plum')
-call s:HL('jsDocType', 'plum')
-call s:HL('jsClassFuncName', 'plum')
-call s:HL('jsFuncCall', 'plum')
-call s:HL('jsGlobalObjects', 'plum')
-call s:HL('jsExceptions', 'plum')
+call s:HL('jsStorageClass' , 'fire')
+call s:HL('jsImport'       , 'fire')
+call s:HL('jsFrom'         , 'fire')
+call s:HL('jsModuleAs'     , 'fire')
+
+call s:HL('jsClassDefinition' , 'plum')
+call s:HL('jsDocType'         , 'plum')
+call s:HL('jsClassFuncName'   , 'plum')
+call s:HL('jsFuncCall'        , 'plum')
+call s:HL('jsExceptions'      , 'plum')
+call s:HL('jsGlobalObjects'   , 'plum')
 
 " }}}
+" Markdown {{{
 
-"" }}}
+call s:HL('htmlH1', 'black', '', 'bold')
+call s:HL('htmlH2', 'black', '', 'bold')
+call s:HL('htmlH3', 'black', '', 'bold')
+call s:HL('htmlH4', 'black', '', 'bold')
+call s:HL('htmlH5', 'black', '', 'bold')
+call s:HL('htmlH6', 'black', '', 'bold')
+
+call s:HL('mkdURL', 'sky')
+
+" }}}
+" Go {{{
+
+call s:HL('goType', 'fire')
+
+call s:HL('goMethodCall'   , 'sky')
+call s:HL('goFunctionCall' , 'sky')
+
+call s:HL('goTypeName' , 'orange')
+call s:HL('goBlock'    , 'orange')
+
+call s:HL('goOperator' , 'black')
+call s:HL('goField'    , 'black')
+call s:HL('goTypeName' , 'black')
+
+" }}}
+" }}}
