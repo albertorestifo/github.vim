@@ -27,7 +27,7 @@ combinations:
 - css
 - vimscript
 
-Help is wanted to add support for Ariline and more langauges.
+Help is wanted to add support for Airline and more langauges.
 
 If a language you use does not render correctly or is not accurate please open
 an issue, providing a Gist or file in a repo I can use as reference for
