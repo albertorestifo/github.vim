@@ -219,10 +219,10 @@ call s:HL('Ignore', 'gray')
 " }}}
 " Completion Menu {{{
 
-call s:HL('Pmenu'      , 'white' , 'black')
-call s:HL('PmenuSel'   , 'white' , 'sky')
-call s:HL('PmenuSbar'  , ''      , 'white')
-call s:HL('PmenuThumb' , 'white')
+call s:HL('Pmenu'      , 'black' , 'light_gray')
+call s:HL('PmenuSel'   , 'white' , 'cloud')
+call s:HL('PmenuSbar'  , '' , 'light_gray')
+call s:HL('PmenuThumb' , '', 'sky')
 
 " }}}
 " Diffs {{{
