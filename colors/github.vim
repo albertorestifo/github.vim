@@ -52,7 +52,7 @@ let s:ghc.diff_remove_light = ['FFEEF0', 224]
 let s:ghc.diff_remove_dark  = ['FCB9C1', 217]
 
 " Color used when selecting a line
-let s:ghc.sun = ['FFFBDF', 230]
+let s:ghc.sun = ['FCE75D', 230]
 
 " When seraching using the GitHub search, the color is slightly darker
 let s:ghc.sun_search = ['FFFEC9', 230]
