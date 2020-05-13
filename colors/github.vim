@@ -128,7 +128,7 @@ call s:HL('TabLine', 'gray', 'cloud', 'none')
 call s:HL('TabLineFill', 'gray', 'cloud', 'none')
 call s:HL('TabLineSel', 'black', 'white', 'none')
 
-call s:HL('MatchParen', 'fire', '', 'none')
+call s:HL('MatchParen', 'black', 'cloud')
 
 call s:HL('NonText',    'cloud', 'bg')
 call s:HL('SpecialKey', 'cloud', 'bg')
